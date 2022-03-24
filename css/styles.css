@@ -1,0 +1,28 @@
+
+body{
+    background-color: azure;
+    font-family: 'Hind Siliguri', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+p{
+    padding: 30px;
+}
+
+.name{
+    color: blue;
+    font-weight: 700;
+}
+
+.name:hover{
+    opacity: 70%;
+    cursor: pointer;
+    
+}
+
+
+.tall_pokemon{
+    color: brown;
+    font-weight: 500;
+}
