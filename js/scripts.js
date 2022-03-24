@@ -26,6 +26,3 @@ for(i=0; i<pokemonList.length; i++){
         document.write(`<p><span class="name">${pokemonList[i].name}</span> (height: ${pokemonList[i].height}).</p>`)
     }
 }
-
-
-
