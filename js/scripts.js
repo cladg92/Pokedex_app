@@ -48,7 +48,11 @@ console.log(pokemonRepository.getAll());
 // add pokemon to pokemonList
 pokemonRepository.add({name: 'Dot', height: 10, types:['cuddle', 'ice']});
 console.log(pokemonRepository.getAll());
-    
+
+
+// find specific pokemon
+console.log(pokemonRepository.getAll().filter(item => item.name === 'Bulbasaur'))
+
 
 
 
