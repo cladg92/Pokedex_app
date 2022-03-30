@@ -17,12 +17,21 @@ let pokemonRepository = (function (){
         }
     ];
 
+    function arrayEquals(a, b) {
+        return Array.isArray(a) &&
+          Array.isArray(b) &&
+          a.length === b.length &&
+          a.every((val, index) => val === b[index]);
+      }
+
     function getAll(){
         return pokemonList;
     }
 
     function add (pokemon){
+        if (typeof pokemon === 'object' && arrayEquals(Object.keys(pokemon),['name','height', 'types'])){ // add new item only if datatype object and has specific keys
         pokemonList.push(pokemon);
+        }
     }
 
     return {
@@ -35,9 +44,13 @@ let pokemonRepository = (function (){
 // access pokemonList
 console.log(pokemonRepository.getAll());
 
+
 // add pokemon to pokemonList
 pokemonRepository.add({name: 'Dot', height: 10, types:['cuddle', 'ice']});
 console.log(pokemonRepository.getAll());
+    
+
+
 
 
 // List Pokemon names and height in document
