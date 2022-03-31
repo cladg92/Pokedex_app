@@ -23,20 +23,36 @@ let pokemonRepository = (function (){
           a.length === b.length &&
           a.every((val, index) => val === b[index]);
       }
-
+    // function to get the whole list
     function getAll(){
         return pokemonList;
     }
-
+    // function to add new pokemons to the list
     function add (pokemon){
         if (typeof pokemon === 'object' && arrayEquals(Object.keys(pokemon),['name','height', 'types'])){ // add new item only if datatype object and has specific keys
         pokemonList.push(pokemon);
         }
     }
+    // function to display pokemons on DOM
+    function addListItem(pokemon){
+        let pokemonList = document.querySelector('.pokemon-list');
+        let listItem = document.createElement('li');
+        let button = document.createElement('button');
+        button.innerText = pokemon.name;
+        button.classList.add('button');
+        listItem.appendChild(button);
+        pokemonList.appendChild(listItem);
+    }
+    // function to filter specific pokemon
+    function getPokemon (pokemonName){
+        return pokemonRepository.getAll().filter(pokemon => pokemon.name == pokemonName);
+    };
 
     return {
         getAll: getAll,
-        add: add
+        add: add,
+        addListItem:addListItem,
+        getPokemon:getPokemon
     }
 })();
 
@@ -50,22 +66,36 @@ pokemonRepository.add({name: 'Dot', height: 10, types:['cuddle', 'ice']});
 console.log(pokemonRepository.getAll());
 
 
-// find specific pokemon
-console.log(pokemonRepository.getAll().filter(item => item.name === 'Bulbasaur'))
+// select specific pokemon
+let pokemonName = ['Dot'];
+console.log(pokemonRepository.getPokemon(pokemonName));
 
 
 
 
+// List Pokemon names in document
+pokemonRepository.getAll().forEach(function(pokemon){
+    pokemonRepository.addListItem(pokemon);
+}) 
 
-// List Pokemon names and height in document
-pokemonRepository.getAll().forEach(function(item){
+// Show only selected Pokemon name in document
+/* pokemonRepository.getPokemon(pokemonName).forEach(function(pokemon){
+    pokemonRepository.addListItem(pokemon);
+})  */
+
+
+
+
+// List Pokemon names and height in document (add forEach)
+/* pokemonRepository.getAll().forEach(function(item){
     if(item.height>3){
         document.write(`<p><span class=name>${item.name}</span> (height: ${item.height}). <span class="tall_pokemon"> Wow, that's tall!</span></p>`);
     } else{
         document.write(`<p><span class="name">${item.name}</span> (height: ${item.height}).</p>`)
     }
-})
+}) */
 
+// List Pokemon names and height in document
 /* for(i=0; i<pokemonList.length; i++){
     if(pokemonList[i].height>3){
         document.write(`<p><span class=name>${pokemonList[i].name}</span> (height: ${pokemonList[i].height}). <span class="tall_pokemon"> Wow, that's tall!</span></p>`);
