@@ -33,7 +33,12 @@ let pokemonRepository = (function (){
         pokemonList.push(pokemon);
         }
     }
-    // function to display pokemons on DOM
+
+    function showDetails(pokemon){
+        console.log(pokemon.name)
+    }
+
+    // function to display pokemons on DOM as buttons
     function addListItem(pokemon){
         let pokemonList = document.querySelector('.pokemon-list');
         let listItem = document.createElement('li');
@@ -42,7 +47,10 @@ let pokemonRepository = (function (){
         button.classList.add('button');
         listItem.appendChild(button);
         pokemonList.appendChild(listItem);
+        // Button event listener on click
+        button.addEventListener('click', function (event){showDetails(pokemon)});
     }
+
     // function to filter specific pokemon
     function getPokemon (pokemonName){
         return pokemonRepository.getAll().filter(pokemon => pokemon.name == pokemonName);
@@ -52,7 +60,8 @@ let pokemonRepository = (function (){
         getAll: getAll,
         add: add,
         addListItem:addListItem,
-        getPokemon:getPokemon
+        getPokemon:getPokemon,
+        showDetails:showDetails
     }
 })();
 
@@ -77,6 +86,8 @@ console.log(pokemonRepository.getPokemon(pokemonName));
 pokemonRepository.getAll().forEach(function(pokemon){
     pokemonRepository.addListItem(pokemon);
 }) 
+
+
 
 // Show only selected Pokemon name in document
 /* pokemonRepository.getPokemon(pokemonName).forEach(function(pokemon){
