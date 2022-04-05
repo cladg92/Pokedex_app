@@ -91,7 +91,7 @@ let pokemonRepository = (function () {
     })();
 
 
-
+//pokemonRepository.add({name:"Dot", height: 0.3, types:["electric"]});
 
 
 // Load list from API and then List Pokemon names in document
