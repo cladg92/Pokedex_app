@@ -1,7 +1,7 @@
 //import fetch from 'node-fetch';
 let pokemonRepository = (function () {
     let pokemonList = [];
-    let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+    let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=3';
 
     
     
@@ -92,6 +92,7 @@ let pokemonRepository = (function () {
 
 
 //pokemonRepository.add({name:"Dot", height: 0.3, types:["electric"]});
+//console.log(pokemonRepository.getAll())
 
 
 // Load list from API and then List Pokemon names in document
