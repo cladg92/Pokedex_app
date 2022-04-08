@@ -1,7 +1,7 @@
 //import fetch from 'node-fetch';
 let pokemonRepository = (function () {
     let pokemonList = [];
-    let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=3';
+    let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
     
     
@@ -72,33 +72,58 @@ let pokemonRepository = (function () {
           console.error(e);
         });
       }
-      
+
     // Function show modal
-    function showModal(title, text){
+    function showModal(pokemon){
       let modalContainer = document.querySelector('#modal-container');
       
       // Clear all existing modal content
       modalContainer.innerHTML ='';
-
+    
       let modal = document.createElement('div');
       modal.classList.add('modal');
-
+    
       // Add new modal content
       let closeButtonElement = document.createElement('button');
       closeButtonElement.classList.add('modal-close');
-      closeButtonElement.innerText = 'Close';
+      closeButtonElement.innerText = 'X';
       // Close button
       closeButtonElement.addEventListener('click',hideModal);
+    
+      let pokemonName = document.createElement('h1');
+      pokemonName.innerText = pokemon.name;
+    
+      let pokemonHeight = document.createElement('p');
+      pokemonHeight.innerText = "Height: " + pokemon.height;
 
-      let titleElement = document.createElement('h1');
-      titleElement.innerText = title;
+      let pokemonImage = document.createElement("img");
+      pokemonImage.src = pokemon.imageUrl;
 
-      let contentElement = document.createElement('p');
-      contentElement.innerText = text;
-
+      let pokemonTypes = document.createElement("p");
+      let types = pokemon.types;
+      // Function to get all of the pokemon types
+      function getType (item){
+          if (types.length == 1){
+            let type = item.type;
+            pokemonTypes.innerText = "Type: " + type.name;
+          } else if (types.indexOf(item) == 0 && types.indexOf(item) + 1 < types.length){
+            let type = item.type;
+            pokemonTypes.innerText += "Types: " + type.name + ", ";
+          } else if (types.indexOf(item) + 1 < types.length){
+            let type = item.type;
+            pokemonTypes.innerText += type.name + ", ";
+          } else {
+            let type = item.type;
+            pokemonTypes.innerText += " " + type.name ;
+          }
+        }
+      types.forEach(getType)
+    
       modal.appendChild(closeButtonElement);
-      modal.appendChild(titleElement);
-      modal.appendChild(contentElement);
+      modal.appendChild(pokemonName);
+      modal.appendChild(pokemonImage);
+      modal.appendChild(pokemonHeight);
+      modal.appendChild(pokemonTypes);
       modalContainer.appendChild(modal);
     
       modalContainer.classList.add('is-visible');
