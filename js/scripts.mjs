@@ -72,13 +72,69 @@ let pokemonRepository = (function () {
           console.error(e);
         });
       }
+      
+    // Function show modal
+    function showModal(title, text){
+      let modalContainer = document.querySelector('#modal-container');
+      
+      // Clear all existing modal content
+      modalContainer.innerHTML ='';
 
-      // Show Details
-      function showDetails(pokemon) {
-        loadDetails(pokemon).then(function () {
-          console.log(pokemon);
-        });
+      let modal = document.createElement('div');
+      modal.classList.add('modal');
+
+      // Add new modal content
+      let closeButtonElement = document.createElement('button');
+      closeButtonElement.classList.add('modal-close');
+      closeButtonElement.innerText = 'Close';
+      // Close button
+      closeButtonElement.addEventListener('click',hideModal);
+
+      let titleElement = document.createElement('h1');
+      titleElement.innerText = title;
+
+      let contentElement = document.createElement('p');
+      contentElement.innerText = text;
+
+      modal.appendChild(closeButtonElement);
+      modal.appendChild(titleElement);
+      modal.appendChild(contentElement);
+      modalContainer.appendChild(modal);
+    
+      modalContainer.classList.add('is-visible');
+    }
+
+    // Function hide Modal
+    function hideModal (){
+      let modalContainer = document.querySelector('#modal-container');
+      modalContainer.classList.remove('is-visible') 
+    };
+
+    // Hide event listeners
+    // ESC key
+    window.addEventListener('keydown', (e) => {
+      let modalContainer = document.querySelector('#modal-container');
+      if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
+        hideModal();  
       }
+    });
+
+    // Clicking outside of the modal
+      let modalContainer = document.querySelector('#modal-container');
+      modalContainer.addEventListener('click', (e) => {
+      // Since this is also triggered when clicking INSIDE the modal
+      // We only want to close if the user clicks directly on the overlay
+      let target = e.target;
+      if (target === modalContainer) {
+        hideModal();
+      }
+    });
+        
+        // Show Details
+        function showDetails(pokemon) {
+          loadDetails(pokemon).then(function () {
+            showModal(pokemon)});
+        }
     
       return {
         add: add,
