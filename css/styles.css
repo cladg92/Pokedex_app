@@ -4,7 +4,9 @@
   box-sizing: border-box;   /* setting the default width of all elements to include the padding and the border */
 }
 
-
+h1{
+    text-align: center;
+}
 
 body{
     background-color: azure;
@@ -17,26 +19,23 @@ p{
     padding: 30px;
 }
 
-.name{
-    color: blue;
-    font-weight: 700;
+/* List */
+
+
+.pokemon-list{
+    padding: 0;
+    text-align: center;
+    list-style-type: none;
 }
 
-.name:hover{
-    opacity: 70%;
-    cursor: pointer;
-
-}
 
 
-.tall_pokemon{
-    color: brown;
-    font-weight: 500;
-}
+/* Buttons */
 
 .button {
   background-color: #4caf50; /* Green */
   border: none;
+  width: 300px;
   color: white;
   padding: 16px 32px;
   text-align: center;
@@ -52,6 +51,17 @@ p{
   border: 2px solid #4caf50;
 }
 
+.button:hover{
+    opacity: 70%;
+    cursor: pointer;
+
+}
+
+
+
+/* Modal */
+
+
 #modal-container {
     display:none;
     
@@ -61,7 +71,6 @@ p{
     display:block;
     position: fixed;
     padding: 20px;
-    box-sizing: border-box;
     top: 0;
     left: 0;
     width: 100%;
@@ -82,12 +91,11 @@ p{
   .modal {
     margin: auto;
     display: inline-block;
-    box-sizing: border-box;
     background: #fff;
     padding: 15px;
     width: 100%;
     max-width: 700px;
-    text-align: left;
+    text-align: center;
   }
   
   .modal-close {
