@@ -29,7 +29,7 @@ let pokemonRepository = (function () {
         let pokemonList = document.querySelector('.pokemon-list');
         let listItem = document.createElement('li');
         let button = document.createElement('button');
-        button.innerText = pokemon.name;
+        button.innerText = pokemon.name.toUpperCase();
         button.classList.add('button');
         listItem.appendChild(button);
         pokemonList.appendChild(listItem);
@@ -91,7 +91,7 @@ let pokemonRepository = (function () {
       closeButtonElement.addEventListener('click',hideModal);
     
       let pokemonName = document.createElement('h1');
-      pokemonName.innerText = pokemon.name;
+      pokemonName.innerText = pokemon.name.toUpperCase();
     
       let pokemonHeight = document.createElement('p');
       pokemonHeight.innerText = "Height: " + pokemon.height;
