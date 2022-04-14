@@ -4,9 +4,7 @@
   box-sizing: border-box;   /* setting the default width of all elements to include the padding and the border */
 }
 
-h1{
-    text-align: center;
-}
+
 
 body{
     background-color: azure;
@@ -19,39 +17,27 @@ p{
     padding: 30px;
 }
 
-/* List */
-
-
-.pokemon-list{
-    padding: 0;
-    text-align: center;
-    list-style-type: none;
-}
-
-
-
-/* Buttons */
-
-.button {
-  background-color: #4caf50; /* Green */
-  border: none;
-  width: 300px;
-  color: white;
-  padding: 16px 32px;
-  text-align: center;
-  text-decoration: none;
+.modal-title{
+  margin: auto;
   display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
-  cursor: pointer;
-  background-color: white;
-  color: black;
-  border: 2px solid #4caf50;
+  box-sizing: border-box;
+  background: #fff;
+  padding: 15px;
+  width: 100%;
+  max-width: 700px;
+  text-align: center;
 }
 
-.button:hover{
+
+.modal-dialog{
+  display:block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+
+.name:hover{
     opacity: 70%;
     cursor: pointer;
 
@@ -59,50 +45,5 @@ p{
 
 
 
-/* Modal */
 
 
-#modal-container {
-    display:none;
-    
-  }
-  
-  #modal-container.is-visible {
-    display:block;
-    position: fixed;
-    padding: 20px;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    
-    /* to show it above other content */
-    z-index: 999; 
-    
-    /* to allow scrolling if the screen is not high enough*/
-    overflow: auto; 
-    
-    /* this is used to center the modal */
-    display: grid;
-    text-align: center;
-  }
-  
-  .modal {
-    margin: auto;
-    display: inline-block;
-    background: #fff;
-    padding: 15px;
-    width: 100%;
-    max-width: 700px;
-    text-align: center;
-  }
-  
-  .modal-close {
-    float: right;
-    -webkit-appearance: none;
-    border: 0;
-    background: none;
-    color: #777;
-    text-decoration: underline;
-  }
