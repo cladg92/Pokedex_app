@@ -32,7 +32,7 @@ let pokemonRepository = (function () {
       let button = document.createElement('button');
       button.innerText = pokemon.name.toUpperCase();
       button.classList.add('button');
-      button.classList.add('btn', 'btn-success', 'btn-lg', 'w-100');
+      button.classList.add('btn', 'btn-dark', 'btn-md', 'w-100');
       button.setAttribute('data-toggle', 'modal');
       button.setAttribute('data-target', '#exampleModal');
       listItem.appendChild(button);
