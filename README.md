@@ -3,6 +3,7 @@
 ## Project Description
 
 This project was part of the [Career Foundry Full Stack Web Development course](https://careerfoundry.com/en/courses/become-a-web-developer/).
+
 Web application built with HTML, CSS and JavaScript. The app loads data from an external API and displays a list of items (Pokemons) and their details on demand.
 
 ## Features
