@@ -30,6 +30,7 @@
       
       <!-- Pokédex Section -->
         <div class="container page-container">
+          <input type="text" id="myInput" onkeyup="pokemonRepository.searchPokemon()" placeholder="Search for Pokemons.." title="Type in a name">
           <div class="row">
             <div class="col"></div>
             <ul class="list-group pokemon-list col-12 col-sm-8 col-md-6 col-lg-4" id = "pokemon-list" data-toggle="modal" data-target="#exampleModal"></ul>
