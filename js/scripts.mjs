@@ -3,19 +3,19 @@ let pokemonRepository = (function () {
     let pokemonList = [];
     let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
-    
-    
+
+
 
     // function to add new pokemons to pokemonList
     function add(pokemon) {
         if (
-          typeof pokemon === "object" &&
-          "name" in pokemon,
-          "detailsUrl" in pokemon
+          typeof pokemon === 'object' &&
+          'name' in pokemon,
+          'detailsUrl' in pokemon
         ) {
           pokemonList.push(pokemon);
         } else {
-          console.log("pokemon is not correct");
+          console.log('pokemon is not correct');
         }
       }
 
@@ -28,7 +28,7 @@ let pokemonRepository = (function () {
     function addListItem(pokemon){
       let pokemonList = document.querySelector('.pokemon-list');
       let listItem = document.createElement('li');
-      listItem.classList.add('list-group-item')
+      listItem.classList.add('list-group-item');
       let button = document.createElement('button');
       button.innerText = pokemon.name.toUpperCase();
       button.classList.add('button');
@@ -44,7 +44,7 @@ let pokemonRepository = (function () {
 
 
 
-    // Load Pokemons from API 
+    // Load Pokemons from API
     function loadList() {
         return fetch(apiUrl).then(function (response) {
           return response.json();
@@ -63,7 +63,7 @@ let pokemonRepository = (function () {
         })
       }
 
-    // Load Pokemon Details from API  
+    // Load Pokemon Details from API
     function loadDetails(item) {
         let url = item.detailsUrl;
         return fetch(url).then(function (response) {
@@ -81,55 +81,59 @@ let pokemonRepository = (function () {
     // Function show modal
     // Function show modal
     function showModal(pokemon){
+      // eslint-disable-next-line no-undef
       let modalBody = $('.modal-body');
+      // eslint-disable-next-line no-undef
       let modalTitle = $('.modal-title');
-      let modalHeader = $('.modal-header');
 
       modalTitle.empty();
       modalBody.empty();
 
       //creating element for name in modal content
+      // eslint-disable-next-line no-undef
       let pokemonName = $('<h1>'+ pokemon.name.toUpperCase() + '</h1>');
       //creating image in modal content
+      // eslint-disable-next-line no-undef
       let pokemonImage = $('<img class = "modal-img" style= "width:50%">');
       pokemonImage.attr('src', pokemon.imageUrl);
       //creating element for height in modal content
+      // eslint-disable-next-line no-undef
       let pokemonHeight = $('<p>'+ 'height:' + pokemon.height + '</p>');
       //creating element for types in modal content
-      let pokemonTypes = document.createElement("p");
+      let pokemonTypes = document.createElement('p');
       let types = pokemon.types;
     // Function to get all of the pokemon types
     function getType (item){
         if (types.length == 1){
           let type = item.type;
-          pokemonTypes.innerText = "Types: " + type.name;
+          pokemonTypes.innerText = 'Types: ' + type.name;
         } else if (types.indexOf(item) == 0 && types.indexOf(item) + 1 < types.length){
           let type = item.type;
-          pokemonTypes.innerText += "Types: " + type.name + ", ";
+          pokemonTypes.innerText += 'Types: ' + type.name + ', ';
         } else if (types.indexOf(item) + 1 < types.length){
           let type = item.type;
-          pokemonTypes.innerText += type.name + ", ";
+          pokemonTypes.innerText += type.name + ', ';
         } else {
           let type = item.type;
-          pokemonTypes.innerText += " " + type.name ;
+          pokemonTypes.innerText += ' ' + type.name ;
         }
       }
     types.forEach(getType)
-    
-      
+
+
       modalTitle.append(pokemonName);
       modalBody.append(pokemonImage);
       modalBody.append(pokemonHeight);
       modalBody.append(pokemonTypes);
-    
+
     }
-        
+
         // Show Details
         function showDetails(pokemon) {
           loadDetails(pokemon).then(function () {
             showModal(pokemon)});
         }
-    
+
       return {
         add: add,
         getAll: getAll,
@@ -152,6 +156,3 @@ pokemonRepository.loadList().then(function() {
     pokemonRepository.addListItem(pokemon);
   });
 });
-
-
-
