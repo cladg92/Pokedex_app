@@ -98,7 +98,7 @@ let pokemonRepository = (function () {
       pokemonImage.attr('src', pokemon.imageUrl);
       //creating element for height in modal content
       // eslint-disable-next-line no-undef
-      let pokemonHeight = $('<p>'+ 'height: ' + pokemon.height + '</p>');
+      let pokemonHeight = $('<p>'+ 'Height: ' + pokemon.height + '</p>');
       //creating element for types in modal content
       let pokemonTypes = document.createElement('p');
       let types = pokemon.types;
