@@ -91,7 +91,7 @@ let pokemonRepository = (function () {
 
       //creating element for name in modal content
       // eslint-disable-next-line no-undef
-      let pokemonName = $('<h1>'+ pokemon.name.toUpperCase() + '</h1>');
+      let pokemonName = $('<h1>'+ pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1) + '</h1>');
       //creating image in modal content
       // eslint-disable-next-line no-undef
       let pokemonImage = $('<img class = "modal-img" style= "width:50%">');
