@@ -137,7 +137,7 @@ let pokemonRepository = (function () {
     // sort pokemon List
     function sortList() {
       var list, i, switching, b, shouldSwitch;
-      list = document.getElementById('pokemon-list');
+      list = document.getElementById('id01');
       switching = true;
       /* Make a loop that will continue until
       no switching has been done: */
