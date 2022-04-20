@@ -28,11 +28,11 @@ let pokemonRepository = (function () {
     function addListItem(pokemon){
       let pokemonList = document.querySelector('.pokemon-list');
       let listItem = document.createElement('li');
-      listItem.classList.add('list-group-item');
+      listItem.classList.add('list-group-item', 'col-md-4','col-lg-3','border-0');
       let button = document.createElement('button');
-      button.innerText = pokemon.name.toUpperCase();
+      button.innerText = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
       button.classList.add('button');
-      button.classList.add('btn', 'btn-dark', 'btn-md', 'w-100');
+      button.classList.add('btn', 'btn-dark', 'btn-md', 'w-100', 'rounded-pill','font-weight-bold');
       button.setAttribute('data-toggle', 'modal');
       button.setAttribute('data-target', '#exampleModal');
       listItem.appendChild(button);
