@@ -76,6 +76,7 @@ ul {
 
 
 .list-group-item{
+  padding: 25px;
   background-color: greenyellow;
 }
 
@@ -101,4 +102,4 @@ ul {
 .modal-header{
   background-color: #382a2a;
 }
-}
+
