@@ -48,9 +48,35 @@ p{
   padding: 30px;
 }
 
-.list-group-item{
-  display: block;
+.button {background-image: linear-gradient(to right, #8E0E00 0%, #1F1C18  51%, #8E0E00  100%)}
+.button {
+  padding: 15px 45px;
   text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;            
+  border-radius: 10px;
+  display: block;
+}
+
+.button:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+             
+         
+         
+
+/* Remove list indentation */
+ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+
+.list-group-item{
+  background-color: greenyellow;
 }
 
 .modal-title{
