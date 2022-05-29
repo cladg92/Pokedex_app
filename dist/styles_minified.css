@@ -1,1 +1,83 @@
-*{box-sizing:border-box}body{background-color:#adff2f;font-family:'Hind Siliguri',sans-serif;font-weight:400;font-size:18px}.page-container{margin-top:90px;width:100%}.pokeball-icon{width:50px;height:50px}#myInput{background-image:url('searchicon.png');background-position:10px 12px;background-repeat:no-repeat;width:100%;font-size:16px;padding:12px 20px 12px 40px;border:1px solid #ddd;margin-bottom:12px}#exampleModal{width:100%;height:100%}p{padding:30px}.button{background-image:linear-gradient(to right,#8e0e00 0,#1f1c18 51%,#8e0e00 100%)}.button{padding:15px 45px;text-align:center;transition:.5s;background-size:200% auto;color:#fff;border-radius:10px;display:block}.button:hover{background-position:right center;color:#fff;text-decoration:none}ul{padding:0;list-style-type:none}.list-group-item{padding:25px;background-color:#adff2f}.modal-title{margin:auto;display:inline-block;box-sizing:border-box;background:#382a2a;color:#fff;padding:15px;width:100%;max-width:700px;text-align:center}.modal-dialog{display:block;margin:0 auto;text-align:center}.modal-header{background-color:#382a2a}
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #adff2f;
+  font-family: "Hind Siliguri", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+}
+.page-container {
+  margin-top: 90px;
+  width: 100%;
+}
+.pokeball-icon {
+  width: 50px;
+  height: 50px;
+}
+#myInput {
+  background-image: url("searchicon.png");
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+#exampleModal {
+  width: 100%;
+  height: 100%;
+}
+p {
+  padding: 30px;
+}
+.button {
+  background-image: linear-gradient(
+    to right,
+    #8e0e00 0,
+    #1f1c18 51%,
+    #8e0e00 100%
+  );
+}
+.button {
+  padding: 15px 45px;
+  text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: #fff;
+  border-radius: 10px;
+  display: block;
+}
+.button:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+}
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+.list-group-item {
+  padding: 25px;
+  background-color: #adff2f;
+}
+.modal-title {
+  margin: auto;
+  display: inline-block;
+  box-sizing: border-box;
+  background: #382a2a;
+  color: #fff;
+  padding: 15px;
+  width: 100%;
+  max-width: 700px;
+  text-align: center;
+}
+.modal-dialog {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+.modal-header {
+  background-color: #382a2a;
+}
