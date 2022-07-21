@@ -27,4 +27,4 @@ Check the live version [here](https://cladg92.github.io/Pokedex_app/).
 ## Set up
 
 - Clone the repository running `git clone https://github.com/cladg92/Pokedex_app.git` in the terminal.
-- Head to the project folder and install dependencies with `npm install`.
+- Open the index.html file in the browser.
